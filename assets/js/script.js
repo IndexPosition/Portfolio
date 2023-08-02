@@ -3,5 +3,6 @@ var meow_0x425cb0=meow_0x2b55;function meow_0x2b55(_0x1ef6b0,_0x2cac89){var _0x3
 
 function copyMail() {
      var textToCopy = document.getElementById("contact__data");
+     textToCopy.select();
      document.execCommand("copy");
 }
