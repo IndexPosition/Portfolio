@@ -462,9 +462,6 @@ img {
 
 .contact__data {
     font-size: var(--large-font-size);
-    -webkit-user-select: all;
-    -ms-user-select: all;
-    user-select: all;
 }
 
 .form__group {
