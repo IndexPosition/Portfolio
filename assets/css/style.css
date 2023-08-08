@@ -73,6 +73,13 @@ body {
     font-size: var(--larger-font-size);
 }
 
+copy_text {
+     -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
+
 main {
     font-family: var(--body-font);
     background-color: var(--body-color);
