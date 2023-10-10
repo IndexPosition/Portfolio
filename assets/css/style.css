@@ -60,7 +60,6 @@ html {
 }
 
 body {
-    cursor: url('assets/img/cursor.png'), auto;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
