@@ -1,242 +1,594 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <title>Abhijith Prakash · Product Engineer</title>
+  <meta name="description"
+    content="Abhijith Prakash, Product Engineer at TCS and founder of Slonke. DevOps, cloud and full-stack engineer from New Delhi who builds Chrome extensions, macOS apps and real-time web tools." />
+  <meta name="theme-color" content="#0b0e10" />
+  <link rel="canonical" href="https://abhijithprakash.me/" />
+  <link rel="icon" type="image/png" href="assets/img/alien-invader.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abhijithprakash.me/" />
+  <meta property="og:title" content="Abhijith Prakash · Product Engineer" />
+  <meta property="og:description" content="Product Engineer at TCS, founder of Slonke. DevOps, cloud and full-stack." />
+  <meta property="og:image" content="https://abhijithprakash.me/assets/img/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Before paint: saved theme + js flag, so nothing flashes -->
+  <script>
+    document.documentElement.classList.add("js");
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) { }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inconsolata:wght@300;400;600;800&display=swap" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/script.js"></script>
-  <title>Abhijith Prakash - PORTFOLIO</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/alien-invader.png">
+  <script src="assets/js/script.js" defer></script>
 </head>
+
 <body>
-  <input type="checkbox" id="day-night" />
-  <header class="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">4BH1J17H</a>
-      <input type="checkbox" id="nav-toggler" />
-      <label for="nav-toggler" class="nav__toggle">
-        <i class="fa-solid fa-bars"></i>
-      </label>
+  <!--==================== ICONS (inline sprite, no icon font) ====================-->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" /></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" /></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6M8 13h8M8 17h5" /></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" /></symbol>
+  </svg>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <span class="readout" id="cursor-readout" aria-hidden="true">x:0000 y:0000</span>
+
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#home" class="nav__logo" aria-label="Home" data-alt="ABHIJITH">4BH1J17H</a>
+
       <ul class="nav__list">
-        <li class="nav__item">
-          <a href="#about" class="nav__link">About</a>
-        </li>
-        <li class="nav__item">
-          <a href="#works" class="nav__link">Portfolio</a>
-        </li>
-        <li class="nav__item">
-          <a href="#contact" class="nav__link">Contact</a>
-        </li>
-        <li class="nav__item">
-          <label for="day-night" class="switcher__toggle nav__link">
-            <i class="fa-solid fa-sun"></i>
-            <i class="fa-solid fa-moon"></i>
-          </label>
+        <li class="nav__trace" aria-hidden="true"></li>
+        <li class="nav__links-only"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__links-only"><a href="#experience" class="nav__link">Experience</a></li>
+        <li class="nav__links-only"><a href="#works" class="nav__link">Portfolio</a></li>
+        <li class="nav__links-only"><a href="#contact" class="nav__link">Contact</a></li>
+        <li>
+          <button class="nav__link theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+            <svg class="icon icon--sun"><use href="#i-sun" /></svg>
+            <svg class="icon icon--moon"><use href="#i-moon" /></svg>
+          </button>
         </li>
       </ul>
     </nav>
   </header>
-  <main class="main">
+
+  <!-- Phone: app-style tab bar instead of a hamburger menu -->
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#home" class="tabbar__link"><svg class="icon"><use href="#i-home" /></svg><span>Home</span></a>
+    <a href="#about" class="tabbar__link"><svg class="icon"><use href="#i-user" /></svg><span>About</span></a>
+    <a href="#works" class="tabbar__link"><svg class="icon"><use href="#i-folder" /></svg><span>Work</span></a>
+    <a href="#experience" class="tabbar__link"><svg class="icon"><use href="#i-clock" /></svg><span>Journey</span></a>
+    <a href="#contact" class="tabbar__link"><svg class="icon"><use href="#i-mail" /></svg><span>Contact</span></a>
+  </nav>
+
+  <!--==================== MAIN ====================-->
+  <main class="main" id="main">
+    <!--==================== HOME ====================-->
     <section class="home" id="home">
-      <div class="home__container container grid">
-        <div class="home__content">
-          <span class="home__small">Hi,</span>
-          <h1 class="home__title">
-            <span>I'm</span> Abhijith <br />
-            <span>a </span><a id="glitched-text"></a>
-          </h1>
-          <div class="home__btns">
-            <a href="#contact" class="btn">./Initiate Collaboration</a>
-            <a href="#works" class="btn btn--transparent">Portfolio</a>
-          </div>
+      <div class="home__container container">
+        <span class="home__small">Hi,</span>
+        <h1 class="home__title">
+          <span>I'm</span> Abhijith <br />
+          <span class="nowrap"><span>a </span><span class="glitch" id="glitched-text" aria-live="off">Product Engineer</span><span class="caret" aria-hidden="true">_</span></span>
+        </h1>
+        <p class="home__lead">
+          I build things that run in browsers, on Macs and in the cloud.
+          Product Engineer at <strong>TCS</strong> by day, founder of <strong>Slonke</strong> by night.
+        </p>
+
+        <div class="home__btns">
+          <a href="#contact" class="btn">./initiate_collaboration</a>
+          <a href="#works" class="btn btn--transparent">cd ~/projects</a>
         </div>
       </div>
+      <a href="#about" class="home__scroll">scroll_down()<span class="caret">_</span></a>
     </section>
+
+    <!--==================== ABOUT ====================-->
     <section class="about section" id="about">
-      <div class="about__container container grid">
-        <div class="about__img-wrapper">
-          <img src="assets/img/profile.jpg" alt="Abhijith Prakash" class="about__img" />
+      <div class="about__container container">
+        <div class="about__img-wrapper reveal">
+          <img src="assets/img/profile.jpg" alt="Abhijith Prakash" class="about__img" width="800" height="800" loading="lazy" />
         </div>
-        <div class="about__content">
+
+        <div class="about__content reveal">
           <h2 class="section__title" data-title="Who am I?">
             My name is Abhijith Prakash, <br />a self-proclaimed computernaut
           </h2>
-          <p class="about__description">
-            I am a Computer Science Engineering undergraduate at
-            <span>Amrita Vishwa Vidyapeetham</span> in Chennai.
-            <br />
-            Computers have always fascinated me, and I like exploring codes,
-            and building random projects.
-          </p>
-          <ul class="about__data grid">
-            <li class="data__item">
-              <h3 class="data__title">Name:</h3>
-              <span class="data__description">Abhijith Prakash</span>
-            </li>
-            <li class="data__item">
-              <h3 class="data__title">Age:</h3>
-              <span class="data__description" id="age"></span>
-            </li>
-            <li class="data__item">
-              <h3 class="data__title">From:</h3>
-              <span class="data__description">New Delhi, India</span>
-            </li>
-            <li class="data__item">
-              <h3 class="data__title">Email:</h3>
-              <span class="data__description about__link" id="copy_text" onclick="copyMail()">me@abhijithprakash.me</span>
-            </li>
+
+          <div class="about__description">
+            <p>
+              I'm a <span>Product Engineer at Tata Consultancy Services</span>, working on
+              TCS ADD Safety, a pharmacovigilance platform. Day to day that means Jenkins
+              pipelines in Groovy, CloudFormation templates, AWS cost audits, and giving an
+              enterprise AI agent a memory that survives between sessions using MCP.
+            </p>
+            <p>
+              Outside work I build my own products end to end. The biggest one is
+              <span>Slonke</span>, a Chrome extension I designed, wrote and deployed solo,
+              from the sync engine to the WebSocket server to the VM it ran on. I graduated
+              in Computer Science from Amrita Vishwa Vidyapeetham, Chennai, in 2025.
+            </p>
+          </div>
+
+          <ul class="about__data">
+            <li class="data__item"><h3 class="data__title">Name:</h3><span>Abhijith Prakash</span></li>
+            <li class="data__item"><h3 class="data__title">Role:</h3><span>Product Engineer @ TCS</span></li>
+            <li class="data__item"><h3 class="data__title">From:</h3><span>New Delhi, India</span></li>
+            <li class="data__item"><h3 class="data__title">Email:</h3><a href="mailto:me@abhijithprakash.me" class="about__link">me@abhijithprakash.me</a></li>
           </ul>
+
           <div class="about__bottom">
-            <a href="" class="btn" download>Parse my CV!</a>
-            <div class="about__social-links">
-              <a href="https://linkedin.com/in/abhijithprakash2003/" target="_blank" class="about__social-link">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/IndexPosition" target="_blank" class="about__social-link">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://instagram.com/bluehostile" target="_blank" class="about__social-link">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+            <a href="assets/Abhijith_Prakash_Resume.pdf" class="btn" download>
+              <svg class="icon"><use href="#i-download" /></svg> Parse my CV!
+            </a>
+
+            <div class="social-links about__social-links">
+              <a href="https://linkedin.com/in/abhijithprakash2003/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a>
+              <a href="https://github.com/IndexPosition" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github" /></svg></a>
+              <a href="https://instagram.com/bluehostile" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram" /></svg></a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="skills section">
-      <h2 class="section__title title-center" data-title="My Talent">
-        Professional Skills
-      </h2>
-      <div class="skills__container container grid">
-        <div class="skills__item">
-          <img src="assets/img/language_icons/C.png" alt="C" class="skills__img">
-          <h3 class="skills__name">C</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/Cpp.png" alt="c++" class="skills__img">
-          <h3 class="skills__name">C++</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/CSS3.png" alt="css3" class="skills__img">
-          <h3 class="skills__name">CSS</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/JavaScript.png" alt="javascript" class="skills__img">
-          <h3 class="skills__name">JavaScript</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/HTML5.png" alt="html5" class="skills__img">
-          <h3 class="skills__name">HTML5</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/java.png" alt="Java" class="skills__img">
-          <h3 class="skills__name">Java</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/Python.png" alt="Python" class="skills__img">
-          <h3 class="skills__name">Python</h3>
-        </div>
-        <div class="skills__item">
-          <img src="assets/img/language_icons/Ruby.png" alt="Ruby" class="skills__img">
-          <h3 class="skills__name">Ruby</h3>
         </div>
 
-        <div class="skills__item">
-          <img src="assets/img/language_icons/MySQL.png" alt="MySQL" class="skills__img">
-          <h3 class="skills__name">MySQL</h3>
-        </div>
+        <aside class="about__skills reveal" aria-labelledby="skills-title">
+          <h2 class="section__title" data-title="My Talent" id="skills-title">Skills</h2>
+          <div class="skills__container swipe">
+          <div class="skills__group">
+            <h3 class="skills__name"><span>01</span> Cloud &amp; DevOps</h3>
+            <ul class="chips">
+              <li>AWS</li><li>CloudFormation</li><li>Jenkins</li><li>Groovy</li><li>Oracle Cloud</li><li>GCP</li>
+              <li>Linux</li><li>nginx</li><li>systemd</li><li>Podman</li><li>Git</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3 class="skills__name"><span>02</span> Web &amp; Backend</h3>
+            <ul class="chips">
+              <li>Node.js</li><li>React</li><li>FastAPI</li><li>Flask</li><li>Django</li>
+              <li>WebRTC</li><li>WebSockets</li><li>Chrome MV3</li><li>REST</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3 class="skills__name"><span>03</span> AI &amp; ML</h3>
+            <ul class="chips">
+              <li>LLM integration</li><li>AI agents</li><li>MCP</li><li>Gemini</li>
+              <li>Transformers</li><li>PyTorch</li><li>TensorFlow</li><li>OpenCV</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3 class="skills__name"><span>04</span> Languages &amp; Data</h3>
+            <ul class="chips">
+              <li>Python</li><li>JavaScript</li><li>Swift</li><li>Java</li><li>C / C++</li><li>SQL</li>
+              <li>PostgreSQL</li><li>MySQL</li><li>SQLite</li>
+            </ul>
+          </div>
+          </div>
+        </aside>
       </div>
     </section>
-    <section class="works section" id="works">
-      <h2 class="section__title title-center" data-title="My Portfolio">
-        Recent Works
-      </h2>
-      <p>All my projects are available on my GitHub profile. <br>
-        Feel free to explore them if you are interested.</p>
-      <a href="https://github.com/IndexPosition/futbol_ui" target="_blank">
-        <div class="work__container container grid">
-          <div class="work__card">
-            <img src="assets/img/project-img-1.jpg" alt="" class="work__img" />
-            <div class="work__details">
-              <h3 class="work__title">Futbol UI</h3>
-              <span class="work__description">UI/UX for online football store</span>
+
+    <!--==================== EXPERIENCE ====================-->
+    <section class="experience section section--alt" id="experience">
+      <div class="container">
+        <h2 class="section__title title-center" data-title="My Journey">Experience</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <span class="timeline__date">Jan 2026 – Present</span>
+            <h3 class="timeline__role">Product Engineer <span class="timeline__org">@ Tata Consultancy Services</span></h3>
+            <p class="timeline__meta">TCS ADD Safety (Pharmacovigilance) · New Delhi</p>
+            <ul class="timeline__points">
+              <li>Build and maintain Jenkins CI/CD pipelines in Groovy for build, test and deploy on AWS.</li>
+              <li>Author CloudFormation (YAML) templates so dev, test and prod come up identical every time.</li>
+              <li>Implemented persistent core memory for an enterprise AI agent via the Model Context Protocol.</li>
+              <li>Audited EC2, S3 and Lambda usage and decommissioned over-provisioned infra to cut monthly spend.</li>
+            </ul>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+
+    <!--==================== PORTFOLIO ====================-->
+    <section class="works section section--alt" id="works">
+      <div class="container">
+        <h2 class="section__title title-center" data-title="My Portfolio">Recent Works</h2>
+
+        <h3 class="works__sub"><span>01</span> Projects I'm proudest of</h3>
+
+        <div class="featured__wrap">
+        <article class="featured reveal" id="slonke">
+          <a class="featured__media" href="https://chromewebstore.google.com/detail/slonke-watch-party/oieghjhflkkkmhhdnpomeahgeigpflkk" target="_blank" rel="noopener">
+            <img src="assets/img/projects/slonke.jpg" alt="Slonke landing page: Do nothing, together." width="1280" height="800" loading="lazy" />
+          </a>
+          <div class="featured__body">
+            <div class="card__head">
+              <img src="assets/img/projects/slonke-icon.png" alt="" class="card__icon" width="48" height="48" loading="lazy" />
+              <div>
+                <span class="card__kicker">Featured · Chrome Extension</span>
+                <h3 class="card__title">Slonke</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              Watch parties for any video site. Start a party on YouTube, Netflix, Prime Video,
+              Disney+ Hotstar or Vimeo, send one link, and the other person lands on the same
+              frame. Play, pause, seek and speed stay in sync both ways, with peer-to-peer voice,
+              video and chat in a drawer that shrinks the page instead of covering it.
+            </p>
+            <button class="more-toggle" type="button" aria-expanded="false">--verbose</button>
+            <div class="featured__more">
+            <ul class="card__facts">
+              <li>Per-site adapters + a MAIN-world bridge for Netflix's player API</li>
+              <li>WebRTC calls that never touch the server, TURN fallback with short-lived creds</li>
+              <li>In-chat minigames, private first-party analytics, admin panel with a blog CMS</li>
+            </ul>
+            <p class="hibernate">
+              <span class="hibernate__tag">zzz · hibernating</span>
+              Slonke is built and still listed on the Chrome Web Store. The servers are taking a
+              nap while I line up funding to keep them running. It will wake up.
+            </p>
+            <ul class="tags">
+              <li>JavaScript</li><li>Chrome MV3</li><li>WebRTC</li><li>Node.js</li><li>WebSockets</li><li>SQLite</li><li>nginx</li>
+            </ul>
+            </div>
+            <div class="card__links">
+              <a href="https://chromewebstore.google.com/detail/slonke-watch-party/oieghjhflkkkmhhdnpomeahgeigpflkk" target="_blank" rel="noopener" class="btn btn--sm">
+                <svg class="icon"><use href="#i-external" /></svg> ./install_slonke
+              </a>
+              <a href="https://slonke.com" target="_blank" rel="noopener" class="btn btn--sm btn--transparent">
+                <svg class="icon"><use href="#i-globe" /></svg> ping slonke.com
+              </a>
+              <button class="origin-btn" type="button" data-story="slonke">./origin_story</button>
             </div>
           </div>
-      </a>
-      <a href="https://github.com/IndexPosition/hopeharbour" target="_blank">
-        <div class="work__card">
-          <img src="assets/img/project-img-2.jpg" alt="" class="work__img" />
-          <div class="work__details">
-            <h3 class="work__title">Hope Harbour</h3>
-            <span class="work__description">The Harbour for the people in need</span>
+        </article>
+
+        <article class="featured featured--flip reveal" id="harmonica">
+          <div class="featured__media arctic">
+            <div class="arctic__page">
+              <div class="showcase__bar"><i></i><i></i><i></i><span>en.wikipedia.org/wiki/Black_hole</span></div>
+              <div class="arctic__article">
+                <b style="width:55%"></b><b></b><b></b><b style="width:80%"></b><b></b><b style="width:65%"></b><b></b><b style="width:72%"></b><b></b><b style="width:40%"></b>
+              </div>
+              <div class="arctic__popup">
+                <div class="arctic__head">Harmonica <span class="arctic__moon"><svg class="icon"><use href="#i-moon" /></svg></span></div>
+                <div class="arctic__textarea">
+                  <span class="arctic__label">Summary</span>
+                  A black hole is a region of spacetime where gravity is so strong that nothing, not even light,
+                  can escape. Its boundary is the event horizon. Most form when massive stars collapse at the end
+                  of their life.
+                </div>
+                <div class="arctic__btns"><span class="arctic__btn">Cancel</span><span class="arctic__btn arctic__btn--go">Summarize</span></div>
+              </div>
+              <span class="arctic__kbd"><kbd>Ctrl</kbd> + <kbd>Q</kbd></span>
+            </div>
           </div>
-        </div>
-      </a>
-      <a href="" target="_blank">
-        <div class="work__card">
-          <img src="assets/img/null-project.jpg" alt="" class="work__img" />
-          <div class="work__details">
-            <h3 class="work__title">Null</h3>
-            <span class="work__description">Coming Soon</span>
+          <div class="featured__body">
+            <div class="card__head">
+              <img src="assets/img/projects/harmonica-icon.png" alt="" class="card__icon" width="48" height="48" loading="lazy" />
+              <div>
+                <span class="card__kicker">Featured · AI Chrome Extension · Research</span>
+                <h3 class="card__title">Harmonica</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              A text summarizer that lives inside your browser tab, backed by my published research. Press <kbd>Ctrl</kbd>+<kbd>Q</kbd> on any page,
+              paste in an article, and get a short, readable summary without switching tabs. The model behind it
+              combines BERT with adversarial learning, which keeps summaries coherent and on topic.
+            </p>
+            <button class="more-toggle" type="button" aria-expanded="false">--verbose</button>
+            <div class="featured__more">
+            <ul class="card__facts">
+              <li>BERT + adversarial learning, 97.6% summarization accuracy</li>
+              <li>Published at IEEE ICTACS 2024: <em>Abstractive Text Summarization Using BERT and Adversarial Learning</em></li>
+              <li>In-page popup with dark mode, no text length limit</li>
+            </ul>
+            <p class="hibernate hibernate--blue">
+              <span class="hibernate__tag">What's public</span>
+              The extension front end is open source as <strong>Arctic</strong>. The BERT + adversarial model
+              is private for now and will be released soon.
+            </p>
+            <ul class="tags">
+              <li>BERT</li><li>Adversarial learning</li><li>PyTorch</li><li>Chrome MV3</li><li>JavaScript</li><li>Flask</li>
+            </ul>
+            </div>
+            <div class="card__links">
+              <a href="https://ieeexplore.ieee.org/document/10840865/" target="_blank" rel="noopener" class="btn btn--sm">
+                <svg class="icon"><use href="#i-paper" /></svg> cat paper.pdf
+              </a>
+              <a href="https://github.com/IndexPosition/Arctic-Text-Summarizer" target="_blank" rel="noopener" class="btn btn--sm btn--transparent">
+                <svg class="icon"><use href="#i-github" /></svg> git clone arctic
+              </a>
+              <button class="origin-btn" type="button" data-story="harmonica">./origin_story</button>
+            </div>
           </div>
+        </article>
         </div>
-      </a>
-      
+
+        <h3 class="works__sub"><span>02</span> More things I've built</h3>
+
+        <!-- Grid -->
+        <div class="work__container swipe">
+
+          <article class="card reveal">
+            <div class="card__head">
+              <img src="assets/img/projects/ctrlleftclick-icon.png" alt="" class="card__icon" width="48" height="48" loading="lazy" />
+              <div>
+                <span class="card__kicker">macOS App · Swift</span>
+                <h3 class="card__title">CtrlLeftClick</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              A tiny menu bar app that stops macOS from turning Control + left-click into a right-click,
+              so left clicks stay left clicks in games and apps. System-wide event tap, launch at login,
+              hideable menu bar icon, shipped as a universal DMG.
+            </p>
+            <ul class="tags"><li>Swift</li><li>AppKit</li><li>Quartz Events</li><li>SwiftPM</li></ul>
+            <div class="card__links">
+              <a href="https://github.com/IndexPosition/CtrlLeftClick" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github" /></svg> git clone</a>
+              <a href="https://indexposition.github.io/CtrlLeftClick/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-globe" /></svg> open site</a>
+              <button class="origin-btn" type="button" data-story="ctrlleftclick">./origin_story</button>
+            </div>
+          </article>
+
+
+          <article class="card reveal">
+            <div class="card__head">
+              <span class="card__glyph" aria-hidden="true">P2P</span>
+              <div>
+                <span class="card__kicker">Web App · WebRTC</span>
+                <h3 class="card__title">LiveBoard</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              A collaborative whiteboard with no backend at all. Strokes travel browser to browser over
+              WebRTC data channels, with peers introduced through public Nostr relays. Static files,
+              no accounts, no database, nothing to keep alive.
+            </p>
+            <ul class="tags"><li>JavaScript</li><li>WebRTC</li><li>Trystero</li><li>Vite</li></ul>
+            <div class="card__links">
+              <span class="card__note">In progress</span>
+              <button class="origin-btn" type="button" data-story="liveboard">./origin_story</button>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__head">
+              <span class="card__glyph" aria-hidden="true">DDC</span>
+              <div>
+                <span class="card__kicker">macOS · Swift 6</span>
+                <h3 class="card__title">Lumenary</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              Display control for macOS that works when the incumbents don't: reliable DDC through docks
+              and after sleep, optically verified software dimming, presets and sync. Core logic done
+              across ten milestones with 95 tests green; app wrapper next.
+            </p>
+            <ul class="tags"><li>Swift 6</li><li>SwiftPM</li><li>DDC/CI</li><li>XCTest</li></ul>
+            <div class="card__links">
+              <span class="card__note">In progress</span>
+              <button class="origin-btn" type="button" data-story="lumenary">./origin_story</button>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__head">
+              <span class="card__glyph" aria-hidden="true">AI</span>
+              <div>
+                <span class="card__kicker">LLM Chatbot · Hackathon</span>
+                <h3 class="card__title">PolicyBot</h3>
+              </div>
+            </div>
+            <p class="card__desc">
+              A Gemini 1.5 Flash chatbot that answers health, life, auto and home insurance questions
+              from real policy documents. FastAPI backend, PyPDF2 knowledge base, multi-turn
+              conversation memory.
+            </p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Gemini</li><li>Streamlit</li></ul>
+            <div class="card__links">
+              <a href="https://github.com/IndexPosition/PolicyBot_Streamlit" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github" /></svg> git clone</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Small builds -->
+        <h3 class="works__sub minis__title"><span>03</span> Small tools &amp; scripts</h3>
+        <ul class="minis swipe reveal">
+          <li>
+            <a href="https://github.com/IndexPosition/Embrace-Fix" target="_blank" rel="noopener">
+              <strong>Embrace-Fix</strong><span>Stops TCS Embrace links from stalling before redirect.</span>
+              <em><svg class="icon"><use href="#i-star" /></svg> 3</em>
+            </a>
+            <button class="origin-btn" type="button" data-story="embrace">./origin_story</button>
+          </li>
+          <li>
+            <a href="https://github.com/IndexPosition/AutoSkip-TCS-iON-Videos" target="_blank" rel="noopener">
+              <strong>AutoSkip TCS iON</strong><span>Tampermonkey script that presses Next for you.</span>
+              <em><svg class="icon"><use href="#i-star" /></svg> 2</em>
+            </a>
+          </li>
+          <li>
+            <a href="https://indexposition.github.io/Sudoku/" target="_blank" rel="noopener">
+              <strong>Sudoku</strong><span>Puzzle generator and backtracking solver.</span>
+              <em><svg class="icon"><use href="#i-star" /></svg> 2</em>
+            </a>
+            <button class="origin-btn" type="button" data-story="sudoku">./origin_story</button>
+          </li>
+          <li>
+            <a href="https://indexposition.github.io/Linked-List-Text-Editor/" target="_blank" rel="noopener">
+              <strong>Linked-List Text Editor</strong><span>A text editor built on a linked list.</span>
+              <em><svg class="icon"><use href="#i-star" /></svg> 2</em>
+            </a>
+            <button class="origin-btn" type="button" data-story="linkedlist">./origin_story</button>
+          </li>
+          <li>
+            <a href="https://github.com/IndexPosition/TCS-NextStep-OTP-Paste-Fix" target="_blank" rel="noopener">
+              <strong>NextStep OTP Paste Fix</strong><span>Brings back paste on the TCS NextStep OTP field.</span>
+              <em>JS</em>
+            </a>
+            <button class="origin-btn" type="button" data-story="otp">./origin_story</button>
+          </li>
+          <li>
+            <a href="https://silence-sense.vercel.app" target="_blank" rel="noopener">
+              <strong>SilenceSense</strong><span>Real-time voice activity detection, React + Flask + WebRTC.</span>
+              <em>Live</em>
+            </a>
+            <button class="origin-btn" type="button" data-story="silencesense">./origin_story</button>
+          </li>
+        </ul>
+
+        <p class="works__more">
+          More experiments live on
+          <a href="https://github.com/IndexPosition" target="_blank" rel="noopener">github.com/IndexPosition <svg class="icon"><use href="#i-arrow" /></svg></a>
+        </p>
       </div>
     </section>
+
+    <!--==================== CONTACT ====================-->
     <section class="contact section" id="contact">
-      <h2 class="section__title title-center" data-title="Get in touch">
-        Contact Me
-      </h2>
-      <div class="contact__container container grid">
-        <div class="contact__deatails">
-          <div class="contact__item">
-            <i class="fa-solid fa-envelope contact__icon"></i>
-            <div>
-              <h3 class="contact__title">Mail Me</h3>
-              <span class="contact__data" id="copy_text" onclick="copyMail()">me@abhijithprakash.me</span>
+      <div class="container">
+        <h2 class="section__title title-center" data-title="Get in touch">Contact Me</h2>
+
+        <div class="contact__container">
+          <div class="contact__details reveal">
+            <p class="contact__intro">
+              Got a role, a project, or a weird idea that needs a browser extension? My inbox is open.
+            </p>
+            <a class="contact__item" href="mailto:me@abhijithprakash.me">
+              <svg class="icon contact__icon"><use href="#i-mail" /></svg>
+              <div><h3 class="contact__title">Mail Me</h3><span>me@abhijithprakash.me</span></div>
+            </a>
+            <a class="contact__item" href="https://linkedin.com/in/abhijithprakash2003/" target="_blank" rel="noopener">
+              <svg class="icon contact__icon"><use href="#i-linkedin" /></svg>
+              <div><h3 class="contact__title">LinkedIn</h3><span>in/abhijithprakash2003</span></div>
+            </a>
+            <div class="contact__item">
+              <svg class="icon contact__icon"><use href="#i-pin" /></svg>
+              <div><h3 class="contact__title">Based in</h3><span>New Delhi, India</span></div>
             </div>
           </div>
+
+          <form action="https://formsubmit.co/me@abhijithprakash.me" method="POST" class="contact__form reveal">
+            <input type="hidden" name="_subject" value="New message from abhijithprakash.me" />
+            <input type="text" name="_honey" class="visually-hidden" tabindex="-1" autocomplete="off" />
+            <div class="form__group">
+              <label class="form__input"><span class="visually-hidden">Name</span>
+                <input type="text" placeholder="Name" class="input__control" name="name" autocomplete="name" required />
+              </label>
+              <label class="form__input"><span class="visually-hidden">Email</span>
+                <input type="email" placeholder="Email" class="input__control" name="email" autocomplete="email" required />
+              </label>
+            </div>
+            <label class="form__input"><span class="visually-hidden">Subject</span>
+              <input type="text" placeholder="Subject" class="input__control" name="subject" />
+            </label>
+            <label class="form__input"><span class="visually-hidden">Message</span>
+              <textarea placeholder="Message" rows="6" class="input__control textarea" name="message" required></textarea>
+            </label>
+            <button class="btn contact__btn" type="submit">./send_message <svg class="icon"><use href="#i-arrow" /></svg></button>
+          </form>
         </div>
-        <form action="https://formsubmit.co/me@abhijithprakash.me" method="POST" class="contact__form">
-          <div class="form__group">
-            <div class="form__input">
-              <input type="text" placeholder="Name" class="input__control" name="name"/>
-            </div>
-            <div class="form__input">
-              <input type="email" placeholder="Email" class="input__control" required name="email"/>
-            </div>
-          </div>
-          <div class="form__input">
-            <input type="text" placeholder="Subject" class="input__control" name="subject"/>
-          </div>
-          <div class="form__input">
-            <textarea name="message" id="" placeholder="Message" cols="30" rows="10"
-              class="input__control textarea"></textarea>
-          </div>
-          <button class="btn contact__btn">Send Message</button>
-          <input type="hidden" name="_next" value="https://abhijithprakash.me/">
-          <input type="hidden" name="_captcha" value="false">
-        </form>
       </div>
     </section>
   </main>
+
+  <!--==================== FOOTER ====================-->
   <footer class="footer">
     <div class="footer__container container">
-      <p class="footer__text">Made in Uranus.</p>
-      <div class="footer__social-links">
-        <a href="https://linkedin.com/in/abhijithprakash2003/" target="_blank" class="footer__social-link">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/IndexPosition" target="_blank" class="footer__social-link">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://instagram.com/bluehostile" target="_blank" class="footer__social-link">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+      <p class="footer__text">Made in Uranus. © <span id="year">2026</span> Abhijith Prakash</p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/abhijithprakash2003/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a>
+        <a href="https://github.com/IndexPosition" target="_blank" rel="noopener" aria-label="GitHub"><svg class="icon"><use href="#i-github" /></svg></a>
+        <a href="https://instagram.com/bluehostile" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram" /></svg></a>
       </div>
     </div>
   </footer>
+
+  <!--==================== ORIGIN STORIES ====================-->
+  <template id="story-slonke" data-title="Slonke" data-tag="part 3 of 3 // the WebRTC saga">
+    <p>It started with a movie night that couldn't happen. A friend and I wanted to watch something together, and every option out there was either paid, broken, or wanted both of us to sign up for five things first.</p>
+    <p>So I thought: how hard can it be to build my own? (Very. The answer is very.) A lot of research later I bumped into WebRTC, and it looked like exactly the missing piece.</p>
+    <p>I didn't trust myself to go straight to the big thing, so I practised first. SilenceSense taught me audio streams and deployment. LiveBoard taught me peer to peer without a server. Slonke is where all of that practice finally went.</p>
+  </template>
+  <template id="story-silencesense" data-title="SilenceSense" data-tag="part 1 of 3 // the WebRTC saga">
+    <p>My first proper date with WebRTC. While researching how to build Slonke, every road led to this one technology, so before betting a whole product on it I wanted to poke it with a stick.</p>
+    <p>SilenceSense listens to live audio and tells speech apart from silence. Not glamorous. But it taught me how media streams actually flow, how a frontend and a backend talk in real time, and how to get the thing deployed. Slonke would not exist without it.</p>
+  </template>
+  <template id="story-liveboard" data-title="LiveBoard" data-tag="part 2 of 3 // the WebRTC saga">
+    <p>Another stop on the road to Slonke. The question this time: can two browsers talk to each other with no server in the middle at all?</p>
+    <p>Turns out yes, if you let public Nostr relays play matchmaker. Every line you draw goes straight to the other person's screen. Nothing to host, nothing to pay for.</p>
+  </template>
+  <template id="story-ctrlleftclick" data-title="CtrlLeftClick" data-tag="bug fix for an audience of one">
+    <p>Yes, I play Minecraft on a MacBook. No, it is not a gaming machine. Please don't tell anyone.</p>
+    <p>The real problem: on a Mac, holding Control turns every left click into a right click. In Minecraft, Control is sprint. So every time I sprinted and tried to hit something, I got a right click instead. Very annoying, mostly for me.</p>
+    <p>After one accidental right click too many, I wrote a tiny menu bar app that tells macOS to leave my left clicks alone.</p>
+  </template>
+  <template id="story-harmonica" data-title="Harmonica" data-tag="college project that grew up">
+    <p>This one started as a college project. My faculty suggested the idea, and I said yes before realising what I'd signed up for.</p>
+    <p>It became the hardest and most challenging project I've ever built. I went in knowing very little about machine learning and came out understanding BERT, adversarial learning, and how to turn all of it into a research paper. That paper got published at IEEE ICTACS 2024.</p>
+    <p>Hard, yes. But honestly one of the most fun things I've made, and the one I learned the most from.</p>
+  </template>
+  <template id="story-lumenary" data-title="Lumenary" data-tag="because reaching behind a monitor is a workout">
+    <p>I bought a new Dell monitor and immediately ran into a Mac problem: the brightness keys on the keyboard do nothing for an external display.</p>
+    <p>The alternative was reaching behind the monitor, finding the tiny joystick, and clicking through menus. Every. Single. Time.</p>
+    <p>So I'm teaching the Mac's own brightness keys to talk to the monitor instead. Press the key, the monitor dims. As it should have from day one.</p>
+  </template>
+  <template id="story-sudoku" data-title="Sudoku" data-tag="college project // backtracking">
+    <p>A college project to learn the backtracking algorithm. It places a number, hits a dead end, backs up and tries the next one. Which, now that I think about it, is also how I debug.</p>
+    <p>It solves puzzles and generates new ones too.</p>
+  </template>
+  <template id="story-linkedlist" data-title="Linked-List Text Editor" data-tag="college project // data structures">
+    <p>Another college project, this time an experiment with linked lists. I wanted to see if one could run a whole text editor.</p>
+    <p>It can. Every character is a node, and the cursor is just a pointer walking up and down the list.</p>
+  </template>
+  <template id="story-embrace" data-title="Embrace-Fix" data-tag="patching someone else's bug">
+    <p>TCS Embrace had a client-side bug: open a link and the page would just keep loading, throw errors, and never get there. The link I actually needed was hiding behind that broken load.</p>
+    <p>So the script stops the page from loading partway through. The hidden link shows up, I click it, done. Small fix, big relief.</p>
+  </template>
+  <template id="story-otp" data-title="NextStep OTP Paste Fix" data-tag="retired with honours">
+    <p>Back in the day the TCS NextStep portal didn't let you paste the OTP from your email. You had to retype it by hand, digit by digit.</p>
+    <p>I wrote a small client-side script that turned pasting back on. They've fixed it properly since, so this one is retired with honours.</p>
+  </template>
+
+  <dialog class="story" id="story" aria-labelledby="story-title">
+    <div class="story__bar">
+      <span class="story__tag" id="story-tag"></span>
+      <button class="story__close" type="button" aria-label="Close" data-close>&times;</button>
+    </div>
+    <p class="story__kicker">origin story</p>
+    <h3 class="story__title" id="story-title"></h3>
+    <div class="story__body" id="story-body"></div>
+  </dialog>
 </body>
+
 </html>
